@@ -1,0 +1,615 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="背景&amp;emsp;&amp;emsp;2月1日，OurEDA大群进了一个名叫小紫的机器人，具备聊天、积分系统、打劫系统等功能。先是把小紫当聊天机器人，随后就当个游戏来玩。OurEDA群自那天起，画风突变。&amp;emsp;&amp;emsp;积分并不好赚，大家都想快点赚够1W积分，买下最贵的武器轩辕剑和最贵的防具捆仙锁。于是大家找到了赚积分最快的方法：24点和猜字谜。拼手速的时候到了。大家把题目放到百度中，得到结果后粘贴">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记QQ群机器人刷分辅助">
+<meta property="og:url" content="http://yoursite.com/2017/02/08/xiaozi-helper/index.html">
+<meta property="og:site_name" content="张单旸晖的个人博客">
+<meta property="og:description" content="背景&amp;emsp;&amp;emsp;2月1日，OurEDA大群进了一个名叫小紫的机器人，具备聊天、积分系统、打劫系统等功能。先是把小紫当聊天机器人，随后就当个游戏来玩。OurEDA群自那天起，画风突变。&amp;emsp;&amp;emsp;积分并不好赚，大家都想快点赚够1W积分，买下最贵的武器轩辕剑和最贵的防具捆仙锁。于是大家找到了赚积分最快的方法：24点和猜字谜。拼手速的时候到了。大家把题目放到百度中，得到结果后粘贴">
+<meta property="og:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/before_import_xiaozi.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/after_import_xiaozi.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/poll_eda_json.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/auto_24point.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/point_24.png">
+<meta property="og:updated_time" content="2017-02-08T12:23:37.103Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记QQ群机器人刷分辅助">
+<meta name="twitter:description" content="背景&amp;emsp;&amp;emsp;2月1日，OurEDA大群进了一个名叫小紫的机器人，具备聊天、积分系统、打劫系统等功能。先是把小紫当聊天机器人，随后就当个游戏来玩。OurEDA群自那天起，画风突变。&amp;emsp;&amp;emsp;积分并不好赚，大家都想快点赚够1W积分，买下最贵的武器轩辕剑和最贵的防具捆仙锁。于是大家找到了赚积分最快的方法：24点和猜字谜。拼手速的时候到了。大家把题目放到百度中，得到结果后粘贴">
+<meta name="twitter:image" content="http://yoursite.com/2017/02/08/xiaozi-helper/before_import_xiaozi.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 记QQ群机器人刷分辅助 | 张单旸晖的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f45743a196315971a3e331b9a1b3ad58";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">张单旸晖的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                记QQ群机器人刷分辅助
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-08T10:20:00+08:00" content="2017-02-08">
+              2017-02-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/project/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/08/xiaozi-helper/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/08/xiaozi-helper/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>&emsp;&emsp;2月1日，OurEDA大群进了一个名叫小紫的机器人，具备聊天、积分系统、打劫系统等功能。先是把小紫当聊天机器人，随后就当个游戏来玩。OurEDA群自那天起，画风突变。<br>&emsp;&emsp;积分并不好赚，大家都想快点赚够1W积分，买下最贵的武器轩辕剑和最贵的防具捆仙锁。于是大家找到了赚积分最快的方法：24点和猜字谜。拼手速的时候到了。大家把题目放到百度中，得到结果后粘贴到对话框中发送。2月4日，已经厌倦持续n天的机械式的刷分，于是写个脚(wai)本(gua)的想法诞生了。<br><a id="more"></a></p>
+<p><div align="center"><br>    <img src="/2017/02/08/xiaozi-helper/before_import_xiaozi.jpg" alt="小紫进入前" title="小紫进入前"><br>    <img src="/2017/02/08/xiaozi-helper/after_import_xiaozi.jpg" alt="小紫进入后" title="小紫进入后"><br></div></p>
+<h4 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h4><h5 id="1、数据通道的建立"><a href="#1、数据通道的建立" class="headerlink" title="1、数据通道的建立"></a>1、数据通道的建立</h5><p>&emsp;&emsp;要完成这个辅助，最重要的任务就是搭建信息的传输通道。下行即获取到小紫在eda群中的发言，上行即自己可以通过脚本进行发言。<br>&emsp;&emsp;QQ电脑版与手机版的数据传输都是TCP/UDP经过加密的，要实现脚本收发消息几乎不可能。我知道几年前有个叫web qq的东西，一查，现在web qq已经改名为smart qq。于是抱着试试看的态度扫二维码登上smart qq，抓包，惊喜地发现消息传输全是明文的，所以可行性就明朗了，发两种post请求即可。</p>
+<p><div align="center"><br>    <img src="/2017/02/08/xiaozi-helper/poll_eda_json.jpg" alt="poll数据_JSON" title="poll数据_JSON"><br></div><br>&emsp;&emsp;起初用JS发ajax请求，但是我对JS不是很熟悉，不造是碰到了跨域ajax请求的问题还是cookie等请求头的问题。于是改用Python，却在编码问题上遭遇不少坑，还得感谢Python老司机<a href="http://blog.xsky123.com" target="_blank" rel="external">@XSky晓天</a>的帮助。2月4日晚，成功拉取到了QQ群里的消息。2月5日早上，成功地实现了发消息。</p>
+<h5 id="2、猜字谜的百度爬虫"><a href="#2、猜字谜的百度爬虫" class="headerlink" title="2、猜字谜的百度爬虫"></a>2、猜字谜的百度爬虫</h5><p>&emsp;&emsp;猜字谜的爬虫很简单，百度XXX打一字，会直接在搜索结果页一个class为op_exactqa_s_answer的div中显示结果。采用requests库发请求，配合BeautifulSoup进行页面信息提取。这是我自己手写的第一个爬虫。<br>&emsp;&emsp;下午，放到群里试，又一个机器人诞生了。两边机器人开始对刷了。刷太快小紫还会说我刷屏。没办法，两条之间加点延时。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def zimi_baidu_search(msg):</div><div class="line">    data = &#123;&apos;wd&apos;: u&quot;%s&quot; % msg, &apos;ie&apos;: &apos;utf-8&apos;&#125;</div><div class="line">    response = requests.get(&apos;http://www.baidu.com/s&apos;, params=data, timeout=5, verify=False)</div><div class="line">    html = response.text</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">	</div><div class="line">    t = soup.div.select(&apos;.op_exactqa_s_answer&apos;)</div><div class="line">    if len(t) &gt; 0:</div><div class="line">        return t[0].text.replace(&apos; &apos;, &apos;&apos;).replace(&apos;\n&apos;, &apos;&apos;)[0]</div><div class="line">    else:</div><div class="line">        return None</div></pre></td></tr></table></figure></p>
+<h5 id="3、24点的自动计算"><a href="#3、24点的自动计算" class="headerlink" title="3、24点的自动计算"></a>3、24点的自动计算</h5><p>&emsp;&emsp;上网找了个在线计算24点的网站，对那个计算按钮右键，审查元素。发现按按钮时没发网络请求，那就是在Js中直接计算出来的。于是直接找到那段Js代码，使用Python去执行它，就能得出结果了。<br>Python执行Js用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pip install pyexecjs</div><div class="line">import execjs</div></pre></td></tr></table></figure></p>
+<p><div align="center"><br>    <img src="/2017/02/08/xiaozi-helper/auto_24point.jpg" alt="自动24点" title="自动24点"><br>    <img src="/2017/02/08/xiaozi-helper/point_24.png" alt="24点" title="24点"><br></div></p>
+<h5 id="4、一些附加功能"><a href="#4、一些附加功能" class="headerlink" title="4、一些附加功能"></a>4、一些附加功能</h5><p>&emsp;&emsp;至此，自动猜字谜和自动刷24点都已经实现。但是自动猜字谜每天有次数限制，自动刷24点无限。于是就想找个夜深人静的时候(3点)自动开始刷，然后6点自动停止。那就用定时器呗。第一个晚上没有成功，因为深夜大家发消息少，拉消息要阻塞很久才返回，在2点多，服务器返回了一个errcode:0，误判为Cookie过期而导致程序退出。<br>&emsp;&emsp;第二个晚上还是没成功，因为设错了定时器，Python的timer只能执行一次的，改用新线程来写。第三个晚上还没到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># timer = threading.Timer(300, timer_tick)</div><div class="line"># timer.start()# timer将只执行一次</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">t1 = threading.Thread(target=timer_tick)# timer_tick是线程执行的函数</div><div class="line">t1.setDaemon(True) # 该线程为后台线程，主线程退出程序直接结束</div><div class="line">t1.start()</div></pre></td></tr></table></figure>
+<p>&emsp;&emsp;后来，又实现了远程控制开关的功能。即我在聊天窗口发一条消息，即可控制自动答24点、自动猜字谜的开启与关闭，还可在软院大群、eda群之间切换。由于实现方法存在漏洞，暂不透露实现原理。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/19/OurEDA-Wifi-AutoLogin/" rel="next" title="OurEDA Wifi(有线)自动登录/反劫持工具(PC windows)">
+                <i class="fa fa-chevron-left"></i> OurEDA Wifi(有线)自动登录/反劫持工具(PC windows)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/08/xiaozi-helper/"
+           data-title="记QQ群机器人刷分辅助" data-url="http://yoursite.com/2017/02/08/xiaozi-helper/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ZhangZaizai" />
+          <p class="site-author-name" itemprop="name">ZhangZaizai</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现过程"><span class="nav-number">2.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、数据通道的建立"><span class="nav-number">2.1.</span> <span class="nav-text">1、数据通道的建立</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、猜字谜的百度爬虫"><span class="nav-number">2.2.</span> <span class="nav-text">2、猜字谜的百度爬虫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、24点的自动计算"><span class="nav-number">2.3.</span> <span class="nav-text">3、24点的自动计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、一些附加功能"><span class="nav-number">2.4.</span> <span class="nav-text">4、一些附加功能</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhangZaizai</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangzaizai"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

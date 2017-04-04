@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Hello World!博客今天搭建成功了不要纠结为什么Hello World不是第一篇博客，因为Hello World之前的博客都是后来补的">
+<meta name="description" content="背景&amp;emsp;&amp;emsp;参加中国软件杯比赛，要求使用分布式集群进行大数据离线处理，并实现1000以上并发量，3秒一次请求(换算为至少2880万PV)，于是学习hadoop,hive相关技术。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World!">
-<meta property="og:url" content="http://yoursite.com/2016/09/17/Hello-World/index.html">
+<meta property="og:title" content="Hadoop单机版搭建与WordCount Hello Wold">
+<meta property="og:url" content="http://yoursite.com/2017/04/05/hadoop-wordcount-helloworld/index.html">
 <meta property="og:site_name" content="张单旸晖的个人博客">
-<meta property="og:description" content="Hello World!博客今天搭建成功了不要纠结为什么Hello World不是第一篇博客，因为Hello World之前的博客都是后来补的">
-<meta property="og:updated_time" content="2017-04-02T07:08:20.658Z">
+<meta property="og:description" content="背景&amp;emsp;&amp;emsp;参加中国软件杯比赛，要求使用分布式集群进行大数据离线处理，并实现1000以上并发量，3秒一次请求(换算为至少2880万PV)，于是学习hadoop,hive相关技术。">
+<meta property="og:updated_time" content="2017-04-04T05:27:37.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World!">
-<meta name="twitter:description" content="Hello World!博客今天搭建成功了不要纠结为什么Hello World不是第一篇博客，因为Hello World之前的博客都是后来补的">
+<meta name="twitter:title" content="Hadoop单机版搭建与WordCount Hello Wold">
+<meta name="twitter:description" content="背景&amp;emsp;&amp;emsp;参加中国软件杯比赛，要求使用分布式集群进行大数据离线处理，并实现1000以上并发量，3秒一次请求(换算为至少2880万PV)，于是学习hadoop,hive相关技术。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> Hello World! | 张单旸晖的个人博客 </title>
+  <title> Hadoop单机版搭建与WordCount Hello Wold | 张单旸晖的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +241,7 @@
             
             
               
-                Hello World!
+                Hadoop单机版搭建与WordCount Hello Wold
               
             
           </h1>
@@ -253,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T16:10:13+08:00" content="2016-09-17">
-              2016-09-17
+            <time itemprop="dateCreated" datetime="2017-04-05T09:00:00+08:00" content="2017-04-05">
+              2017-04-05
             </time>
           </span>
 
@@ -267,8 +267,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/freetalk/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/17/Hello-World/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/17/Hello-World/" itemprop="commentsCount"></span>
+                <a href="/2017/04/05/hadoop-wordcount-helloworld/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/hadoop-wordcount-helloworld/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,7 +307,16 @@
       
 
       
-        <p>Hello World!博客今天搭建成功了<br>不要纠结为什么Hello World不是第一篇博客，因为Hello World之前的博客都是后来补的<br><a id="more"></a><br>www.zhangzaizai.com终于迎来了公网访问，我的博客基于hexo框架搭建成功了！</p>
+        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>&emsp;&emsp;参加中国软件杯比赛，要求使用分布式集群进行大数据离线处理，并实现1000以上并发量，3秒一次请求(换算为至少2880万PV)，于是学习hadoop,hive相关技术。<br><a id="more"></a></p>
+<h4 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h4><h5 id="1、hadoop的安装与启动"><a href="#1、hadoop的安装与启动" class="headerlink" title="1、hadoop的安装与启动"></a>1、hadoop的安装与启动</h5><h6 id="以下操作均在Ubuntu-16-04LTS下执行"><a href="#以下操作均在Ubuntu-16-04LTS下执行" class="headerlink" title="以下操作均在Ubuntu 16.04LTS下执行"></a>以下操作均在Ubuntu 16.04LTS下执行</h6><p>&emsp;&emsp;在<a href="http://hadoop.apache.org/" target="_blank" rel="external">hadoop官网</a>下载最新的稳定release版hadoop，(本文撰写时为2.8.0)，tar -zxvf解压到/usr/local下，配置JDK与Hadoop环境变量<br>由于JDK ubuntu自带并且配好环境变量，所以下面只展示Hadoop环境变量的配置方法<br><code>vim /etc/profile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export HADOOP_HOME=/usr/local/hadoop-2.8.0</div><div class="line">export PATH=.:$HADOOP_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/sbin:$PATH&lt;/span&gt;</div></pre></td></tr></table></figure></p>
+<p>至此，Hadoop环境变量配置完成<br>然后，cd到安装目录下，再<code>cd sbin</code>,使用如下命令单独拉起每个服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">./hadoop-daemon.sh  --script hdfs start namenode</div><div class="line">./hadoop-daemon.sh  --script hdfs start datanode</div><div class="line">./yarn-daemon.sh start resourcemanager</div><div class="line">./yarn-daemon.sh start nodemanager</div></pre></td></tr></table></figure></p>
+<h5 id="2、word-count-单词计数-Hello-World的运行"><a href="#2、word-count-单词计数-Hello-World的运行" class="headerlink" title="2、word count(单词计数) Hello World的运行"></a>2、word count(单词计数) Hello World的运行</h5><p>&emsp;&emsp;在Hadoop安装目录下的share/hadoop/mapreduce目录中，有示例代码jar包，名为hadoop-mapreduce-examples-2.8.0.jar,于是不用手动编写代码直接就可以试验运行word count(单词计数)。<br>&emsp;&emsp;先在本地磁盘上建两个存有单词的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &quot;hello hadoop java&quot; &gt; file1.txt</div><div class="line">echo &quot;hello hadoop android&quot; &gt; file2.txt</div></pre></td></tr></table></figure></p>
+<p>然后，在HDFS上创建输入文件夹目录 input，以下这步在hadoop安装目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hadoop fs -mkdir input</div></pre></td></tr></table></figure></p>
+<p>然后，把本地硬盘上创建的文件传进input 里面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hadoop fs -put file*.txt input</div></pre></td></tr></table></figure></p>
+<p>直接运行Hadoop自带的运行 wordcount 例子的 jar 包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.0.jar wordcount input/ output/wordcount1</div></pre></td></tr></table></figure></p>
+<p>这样生成的wordcount1是个目录，里面是结果的文本文件，用hdfs的cat进行文件连接，输出结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hadoop fs -cat output/wordcount1/*</div></pre></td></tr></table></figure></p>
+<p>得到结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">android	1</div><div class="line">hadoop	2</div><div class="line">hello	2</div><div class="line">java	1</div></pre></td></tr></table></figure></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="http://blog.csdn.net/an_2016/article/details/52058246" target="_blank" rel="external"> Hadoop单机版环境搭建及第一个示例 </a><br><a href="http://bbs.csdn.net/topics/390818121" target="_blank" rel="external">hadoop 启动问题，start-all.sh启动问题</a><br><a href="http://www.itnose.net/detail/6197823.html" target="_blank" rel="external">hadoop-2.6.0运行WordCount</a></p>
 
       
     </div>
@@ -332,17 +341,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/05/ball-tracking/" rel="next" title="小球跟踪控制系统">
-                <i class="fa fa-chevron-left"></i> 小球跟踪控制系统
+              <a href="/2017/02/08/xiaozi-helper/" rel="next" title="记QQ群机器人刷分辅助">
+                <i class="fa fa-chevron-left"></i> 记QQ群机器人刷分辅助
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/19/OurEDA-Wifi-AutoLogin/" rel="prev" title="OurEDA Wifi(有线)自动登录/反劫持工具(PC windows)">
-                OurEDA Wifi(有线)自动登录/反劫持工具(PC windows) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +373,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/17/Hello-World/"
-           data-title="Hello World!" data-url="http://yoursite.com/2016/09/17/Hello-World/">
+      <div class="ds-thread" data-thread-key="2017/04/05/hadoop-wordcount-helloworld/"
+           data-title="Hadoop单机版搭建与WordCount Hello Wold" data-url="http://yoursite.com/2017/04/05/hadoop-wordcount-helloworld/">
       </div>
     
   </div>
@@ -453,7 +458,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现过程"><span class="nav-number">2.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、hadoop的安装与启动"><span class="nav-number">2.1.</span> <span class="nav-text">1、hadoop的安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#以下操作均在Ubuntu-16-04LTS下执行"><span class="nav-number">2.1.1.</span> <span class="nav-text">以下操作均在Ubuntu 16.04LTS下执行</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、word-count-单词计数-Hello-World的运行"><span class="nav-number">2.2.</span> <span class="nav-text">2、word count(单词计数) Hello World的运行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
           </div>
         </section>
